@@ -19,11 +19,11 @@ include_subgraph_errors:
   all: true
 subscription:
   enabled: true
-  # mode:
-    # passthrough:
-      # all:
-        # path: /
-        # protocol: graphql_ws
+  mode:
+    passthrough:
+      all:
+        path: /subscriptions
+        protocol: graphql_ws
 cors:
   # WARNING: allow_any_origin: true is NOT safe for production!
   # This setting allows requests from any origin, which can lead to security vulnerabilities.
