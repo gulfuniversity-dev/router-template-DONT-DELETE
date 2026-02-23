@@ -26,6 +26,7 @@ subscription:
     passthrough:
       all:
         path: /subscriptions
+        protocol: graphql_ws
 
 cors:
   # WARNING: allow_any_origin: true is NOT safe for production!
