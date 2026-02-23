@@ -20,6 +20,12 @@ homepage:
   enabled: false
 include_subgraph_errors:
   all: true
+subscription:
+  enabled: true
+  mode:
+    passthrough:
+      all:
+        path: /subscriptions
 
 cors:
   # WARNING: allow_any_origin: true is NOT safe for production!
