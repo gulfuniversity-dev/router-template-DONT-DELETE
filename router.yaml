@@ -31,7 +31,7 @@ cors:
   # For development/testing: Keep as-is for quick experimentation
   # For production: Replace with specific origins like:
   #
-  # origins:
+  origins:"*"
   #   - "https://yourdomain.com"
   #   - "https://app.yourdomain.com"
   #   - "https://admin.yourdomain.com"
