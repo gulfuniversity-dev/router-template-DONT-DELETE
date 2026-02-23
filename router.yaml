@@ -1,6 +1,5 @@
 # The runtime container comes with sensible defaults that work well for most use cases.
 # Uncomment the COPY and CMD lines in the Dockerfile to use this configuration.
-
 sandbox:
   enabled: false
 supergraph:
@@ -10,12 +9,10 @@ supergraph:
     cache:
       in_memory:
         limit: 512 # This is the default value
-
 health_check:
-  listen: 0.0.0.0:8088
+  listen: 0.0.0.0:${env.ROUTER_PORT:-4000}
   enabled: true
   path: /health # Optional, default: /health
-
 homepage:
   enabled: false
 include_subgraph_errors:
@@ -27,7 +24,6 @@ subscription:
       all:
         path: /subscriptions
         protocol: graphql_ws
-
 cors:
   # WARNING: allow_any_origin: true is NOT safe for production!
   # This setting allows requests from any origin, which can lead to security vulnerabilities.
@@ -45,7 +41,6 @@ cors:
   #   - "${env.FRONTEND_URL}"
   #   - "${env.ADMIN_URL}"
   allow_any_origin: true
-
 limits:
   parser_max_tokens: 15000 # This is the default value.
   parser_max_recursion: 4096 # This is the default value.
@@ -53,7 +48,6 @@ limits:
   max_height: 200
   max_aliases: 30
   max_root_fields: 20
-
 telemetry:
   instrumentation:
     spans:
